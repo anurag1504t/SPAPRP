@@ -8,9 +8,13 @@ const mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/usersRouter');
 var projectRouter = require('./routes/projectRouter');
+var marksRouter = require('./routes/marksRouter');
+var createResultsRouter = require('./routes/createResultsRouter');
 
-// Schema For Projects
+// Schema For User, Projects and Marks
+const users = require('./models/users');
 const Projects = require('./models/projects');
+const Marks = require('./models/marks');
 
 // Establishing Database Connection
 const url = 'mongodb://localhost:27017/SPAPRP';
@@ -34,7 +38,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/projects',projectRouter);
+app.use('/projects', projectRouter);
+app.use('/marks', marksRouter);
+//app.use('/createResults', createResultsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -59,3 +59,122 @@ To create a User
 		}		
 	]		
 }
+
+Creation of Marks Object
+{
+	"userId" : "bcs_201811",
+	"batch" : "bcs2018",
+	"semesters" : [
+		{
+			"semester" : 2,
+			"subjects" : [
+				{
+					"subjectCode" : "DCS",
+					"subjectName" : "Digital Circuit Systems",
+					"major" : 40,
+					"minor" : 30,
+					"attendence" : 5,
+					"assignment" : 5
+				},
+				{
+					"subjectCode" : "DBS",
+					"subjectName" : "Database Systems",
+					"major" : 38,
+					"minor" : 28,
+					"attendence" : 5,
+					"assignment" : 5
+				},
+				{
+					"subjectCode" : "DCS",
+					"subjectName" : "Digital Circuit Systems",
+					"major" : 42,
+					"minor" : 32,
+					"attendence" : 5,
+					"assignment" : 5
+				},
+				{
+					"subjectCode" : "DCS",
+					"subjectName" : "Digital Circuit Systems",
+					"major" : 41,
+					"minor" : 31,
+					"attendence" : 5,
+					"assignment" : 5
+				}
+			]
+		},
+		{
+			"semester" : 1,
+			"subjects" : [
+				{
+					"subjectCode" : "EM1",
+					"subjectName" : "Engineering Mathematics 1",
+					"major" : 40,
+					"minor" : 30,
+					"attendence" : 5,
+					"assignment" : 5
+				},
+				{
+					"subjectCode" : "EP",
+					"subjectName" : "Engineering Physics",
+					"major" : 38,
+					"minor" : 28,
+					"attendence" : 5,
+					"assignment" : 5
+				},
+				{
+					"subjectCode" : "EHV",
+					"subjectName" : "Ethics and Human Values",
+					"major" : 42,
+					"minor" : 32,
+					"attendence" : 5,
+					"assignment" : 5
+				},
+				{
+					"subjectCode" : "CP",
+					"subjectName" : "Computer Programming",
+					"major" : 41,
+					"minor" : 31,
+					"attendence" : 5,
+					"assignment" : 5
+				}
+			]
+		},
+		{
+			"semester" : 3,
+			"subjects" : [
+				{
+					"subjectCode" : "OS",
+					"subjectName" : "Operating Systems",
+					"major" : 40,
+					"minor" : 30,
+					"attendence" : 5,
+					"assignment" : 5
+				},
+				{
+					"subjectCode" : "COA",
+					"subjectName" : "Computer Organisation and Architecture",
+					"major" : 38,
+					"minor" : 28,
+					"attendence" : 5,
+					"assignment" : 5
+				},
+				{
+					"subjectCode" : "OOPS",
+					"subjectName" : "Object Oriented Programming Systems",
+					"major" : 42,
+					"minor" : 32,
+					"attendence" : 5,
+					"assignment" : 5
+				},
+				{
+					"subjectCode" : "ES",
+					"subjectName" : "Environmental Science",
+					"major" : 41,
+					"minor" : 31,
+					"attendence" : 5,
+					"assignment" : 5
+				}
+			]
+		}	
+	]
+}

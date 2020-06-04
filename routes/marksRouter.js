@@ -51,7 +51,7 @@ marksRouter.route('/')
 // Methods for http://localhost:3000/marks/:userId API end point
 marksRouter.route('/:userId')
 .get((req,res,next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
@@ -87,7 +87,7 @@ marksRouter.route('/:userId')
 // Methods for http://localhost:3000/marks/:userId/semesters API end point
 marksRouter.route('/:userId/semesters')
 .get((req,res,next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if (mark != null) {
             res.statusCode = 200;
@@ -103,7 +103,7 @@ marksRouter.route('/:userId/semesters')
     .catch((err) => next(err));
 })
 .post((req, res, next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if (mark != null) {
             mark.semesters.push(req.body);
@@ -127,7 +127,7 @@ marksRouter.route('/:userId/semesters')
     res.end(`PUT operation not supported on /users/${req.params.userId}/semesters`);
 })
 .delete((req, res, next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if (mark != null) {
             for (var i = (mark.semesters.length -1); i >= 0; i--) {
@@ -152,7 +152,7 @@ marksRouter.route('/:userId/semesters')
 // Methods for http://localhost:3000/marks/:userId/semesters/:semesterId API end point
 marksRouter.route('/:userId/semesters/:semesterId')
 .get((req,res,next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if (mark != null && mark.semesters.id(req.params.semesterId) != null) {
             res.statusCode = 200;
@@ -177,7 +177,7 @@ marksRouter.route('/:userId/semesters/:semesterId')
     res.end(`POST operation not supported on /users/${req.params.userId}/semesters/${req.params.semesterId}`);
 })
 .put((req, res, next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if (mark != null && mark.semesters.id(req.params.semesterId) != null) {
             if (req.body.semester) {
@@ -207,7 +207,7 @@ marksRouter.route('/:userId/semesters/:semesterId')
     .catch((err) => next(err));
 })
 .delete((req, res, next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if (mark != null && mark.semesters.id(req.params.semesterId) != null) {
             mark.semesters.id(req.params.semesterId).remove();
@@ -235,7 +235,7 @@ marksRouter.route('/:userId/semesters/:semesterId')
 // Methods for http://localhost:3000/marks/:userId/semesters/:semesterId/subjects API end point
 marksRouter.route('/:userId/semesters/:semesterId/subjects')
 .get((req,res,next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if (mark != null && mark.semesters.id(req.params.semesterId) != null) {
             res.statusCode = 200;
@@ -256,10 +256,10 @@ marksRouter.route('/:userId/semesters/:semesterId/subjects')
     .catch((err) => next(err));
 })
 .post((req, res, next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if (mark != null && mark.semesters.id(req.params.semesterId) != null) {
-            mark.semesters.subjects.push(req.body);
+            mark.semesters.id(req.params.semesterId).subjects.push(req.body);
             mark.save()
             .then((mark) => {
                 res.statusCode = 200;
@@ -285,7 +285,7 @@ marksRouter.route('/:userId/semesters/:semesterId/subjects')
     res.end(`POST operation not supported on /users/${req.params.userId}/semesters/${req.params.semesterId}/subjects`);
 })
 .delete((req, res, next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if (mark != null && mark.semesters.id(req.params.semesterId) != null) {
             for (var i = (mark.semesters.id(req.params.semesterId).subjects.length -1); i >= 0; i--) {
@@ -315,7 +315,7 @@ marksRouter.route('/:userId/semesters/:semesterId/subjects')
 // Methods for http://localhost:3000/marks/:userId/semesters/:semesterId/subjects/:subjectId API end point
 marksRouter.route('/:userId/semesters/:semesterId/subjects/:subjectId')
 .get((req,res,next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if(mark != null) {
             if(mark.semesters.id(req.params.semesterId) != null) {
@@ -349,7 +349,7 @@ marksRouter.route('/:userId/semesters/:semesterId/subjects/:subjectId')
     res.end(`POST operation not supported on /users/${req.params.userId}/semesters/${req.params.semesterId}/subjects/${req.params.subjectId}`);
 })
 .put((req, res, next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if(mark != null) {
             if(mark.semesters.id(req.params.semesterId) != null) {
@@ -400,7 +400,7 @@ marksRouter.route('/:userId/semesters/:semesterId/subjects/:subjectId')
     .catch((err) => next(err));
 })
 .delete((req, res, next) => {
-    Marks.find({userId: req.params.userId})
+    Marks.findOne({userId: req.params.userId})
     .then((mark) => {
         if(mark != null) {
             if(mark.semesters.id(req.params.semesterId) != null) {
