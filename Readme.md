@@ -179,13 +179,3 @@ Creation of Marks Object
 		}	
 	]
 }
-=======
-To create a Project Object               
-{                 
-	"projectName" : "Student's Performance and Project Reporting Portal",             
-	"description" : "This project has been done with collaboration by Aman Kumar Mishra, Anurag Tiwari and Tathagat Kumar for SE lab project work.",              
-	"link" : "https://github.com/anurag1504t/SPAPRP",                    
-	"teckStack" : ["NodeJS", "MongoDB", "HTML", "CSS", "Javascript"],               
-	"contributers" : ["Aman Kumar Mishra", "Anurag Tiwari", "Tathagat Kumar"]                   
-}                   
->>>>>>> 83989a1b5637e4d3987c2f4fbc868d232f31af8e
