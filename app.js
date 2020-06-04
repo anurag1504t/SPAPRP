@@ -40,7 +40,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/projects', projectRouter);
 app.use('/marks', marksRouter);
-//app.use('/createResults', createResultsRouter);
+app.use('/createResults', createResultsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

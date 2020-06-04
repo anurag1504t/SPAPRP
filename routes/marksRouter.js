@@ -124,7 +124,7 @@ marksRouter.route('/:userId/semesters')
 })
 .put((req, res, next) => {
     res.statusCode = 403;
-    res.end(`PUT operation not supported on /users/${req.params.userId}/semesters`);
+    res.end(`PUT operation not supported on /marks/${req.params.userId}/semesters`);
 })
 .delete((req, res, next) => {
     Marks.findOne({userId: req.params.userId})
@@ -174,7 +174,7 @@ marksRouter.route('/:userId/semesters/:semesterId')
 })
 .post((req, res, next) => {
     res.statusCode = 403;
-    res.end(`POST operation not supported on /users/${req.params.userId}/semesters/${req.params.semesterId}`);
+    res.end(`POST operation not supported on /marks/${req.params.userId}/semesters/${req.params.semesterId}`);
 })
 .put((req, res, next) => {
     Marks.findOne({userId: req.params.userId})
@@ -282,7 +282,7 @@ marksRouter.route('/:userId/semesters/:semesterId/subjects')
 })
 .put((req, res, next) => {
     res.statusCode = 403;
-    res.end(`POST operation not supported on /users/${req.params.userId}/semesters/${req.params.semesterId}/subjects`);
+    res.end(`POST operation not supported on /marks/${req.params.userId}/semesters/${req.params.semesterId}/subjects`);
 })
 .delete((req, res, next) => {
     Marks.findOne({userId: req.params.userId})
@@ -346,7 +346,7 @@ marksRouter.route('/:userId/semesters/:semesterId/subjects/:subjectId')
 })
 .post((req, res, next) => {
     res.statusCode = 403;
-    res.end(`POST operation not supported on /users/${req.params.userId}/semesters/${req.params.semesterId}/subjects/${req.params.subjectId}`);
+    res.end(`POST operation not supported on /marks/${req.params.userId}/semesters/${req.params.semesterId}/subjects/${req.params.subjectId}`);
 })
 .put((req, res, next) => {
     Marks.findOne({userId: req.params.userId})
