@@ -6,7 +6,7 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/usersRouter');
 var projectRouter = require('./routes/projectRouter');
 
 // Schema For Projects

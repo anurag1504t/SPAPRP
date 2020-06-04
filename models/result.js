@@ -1,3 +1,8 @@
+/**
+ * This schema is for Result Creation. Admin send weightage of each component.
+ * The result is created and Pushed into the SGPA and CGPA of each student.
+*/
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
