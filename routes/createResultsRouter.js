@@ -27,13 +27,20 @@ createResultsRouter.route('/')
                     Users.findOne({userId: students[i].userId})
                     .then((user) => {
                         if (user != null) {
+                            var temp = 0;
+                            for( var l = user.SGPA.length - 1; l >= 0; l--)
+                            {
+                                temp += user.SGPA[i].SG;
+                            }
                             user.SGPA.push({semester: req.body.semester, gradepoint: SG});
+                            user.CGPA = (temp + SG)/(user.SGPA.length + 1);
                             user.save()
                             .then((user) => {
                                 res.statusCode = 200;
                                 res.setHeader('Content-Type', 'application/json');
                                 res.json(user);                
-                            }, (err) => next(err));
+                            }, (err) => next(err))
+                            .catch((err) => next(err));
                         }
                         else {
                             err = new Error(`User ${req.params.userId} not found`);
@@ -45,9 +52,6 @@ createResultsRouter.route('/')
                 }
             }
         }
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
-        res.json(students);
     }, (err) => next(err))
     .catch((err) => next(err));
 })
