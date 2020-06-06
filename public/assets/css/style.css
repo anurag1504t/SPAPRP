@@ -725,37 +725,37 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Courses
+# Projects
 --------------------------------------------------------------*/
-.courses .course-item {
+.projects .project-item {
   border-radius: 5px;
   border: 1px solid #eef0ef;
 }
 
-.courses .course-content {
+.projects .project-content {
   padding: 15px;
 }
 
-.courses .course-content h3 {
+.projects .project-content h3 {
   font-weight: 700;
   font-size: 20px;
 }
 
-.courses .course-content h3 a {
+.projects .project-content h3 a {
   color: #37423b;
   transition: 0.3s;
 }
 
-.courses .course-content h3 a:hover {
+.projects .project-content h3 a:hover {
   color: #5fcf80;
 }
 
-.courses .course-content p {
+.projects .project-content p {
   font-size: 14px;
   color: #777777;
 }
 
-.courses .course-content h4 {
+.projects .project-content h4 {
   font-size: 14px;
   background: #5fcf80;
   padding: 7px 14px;
@@ -763,31 +763,31 @@ section {
   margin: 0;
 }
 
-.courses .course-content .price {
+.projects .project-content .price {
   margin: 0;
   font-weight: 700;
   font-size: 18px;
   color: #37423b;
 }
 
-.courses .trainer {
+.projects .trainer {
   padding-top: 15px;
   border-top: 1px solid #eef0ef;
 }
 
-.courses .trainer .trainer-profile img {
+.projects .trainer .trainer-profile img {
   max-width: 50px;
   border-radius: 50px;
 }
 
-.courses .trainer .trainer-profile span {
+.projects .trainer .trainer-profile span {
   padding-left: 10px;
   font-weight: 600;
   font-size: 16px;
   color: #5a6c60;
 }
 
-.courses .trainer .trainer-rank {
+.projects .trainer .trainer-rank {
   font-size: 18px;
   color: #657a6d;
 }
@@ -941,9 +941,9 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Cource Details
+# Project Details
 --------------------------------------------------------------*/
-.course-details h3 {
+.project-details h3 {
   font-size: 24px;
   margin: 30px 0 15px 0;
   font-weight: 700;
@@ -951,7 +951,7 @@ section {
   padding-bottom: 10px;
 }
 
-.course-details h3:before {
+.project-details h3:before {
   content: '';
   position: absolute;
   display: block;
@@ -962,7 +962,7 @@ section {
   left: 0;
 }
 
-.course-details h3:after {
+.project-details h3:after {
   content: '';
   position: absolute;
   display: block;
@@ -973,25 +973,25 @@ section {
   left: 0;
 }
 
-.course-details .course-info {
+.project-details .project-info {
   background: #f6f7f6;
   padding: 10px 15px;
   margin-bottom: 15px;
 }
 
-.course-details .course-info h5 {
+.project-details .project-info h5 {
   font-weight: 400;
   font-size: 16px;
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
 
-.course-details .course-info p {
+.project-details .project-info p {
   margin: 0;
   font-weight: 600;
 }
 
-.course-details .course-info a {
+.project-details .project-info a {
   color: #657a6d;
 }
 
