@@ -11,7 +11,7 @@ run the app:
 To create a Project Object
 {
 	"projectName" : "Student's Performance and Project Reporting Portal",
-	"description" : "This project has been done with collaboration by Aman Kumar Mishra, Anurag Tiwari and Tathagat Kumar for SE lab project work.",
+	"description" : "SPAPRP evaluates  students’ academic performance with a fuzzy logic based performance evaluation method to evaluate students’ final academic performance. It also show case projects done by students.",
 	"link" : "https://github.com/anurag1504t/SPAPRP",
 	"teckStack" : ["NodeJS", "MongoDB", "HTML", "CSS", "Javascript"],
 	"contributers" : ["Aman Kumar Mishra", "Anurag Tiwari", "Tathagat Kumar"]

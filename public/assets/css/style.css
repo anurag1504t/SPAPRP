@@ -770,24 +770,24 @@ section {
   color: #37423b;
 }
 
-.projects .trainer {
+.projects .contributer {
   padding-top: 15px;
   border-top: 1px solid #eef0ef;
 }
 
-.projects .trainer .trainer-profile img {
+.projects .contributer .contributer-profile img {
   max-width: 50px;
   border-radius: 50px;
 }
 
-.projects .trainer .trainer-profile span {
+.projects .contributer .contributer-profile span {
   padding-left: 10px;
   font-weight: 600;
   font-size: 16px;
   color: #5a6c60;
 }
 
-.projects .trainer .trainer-rank {
+.projects .contributer .contributer-rank {
   font-size: 18px;
   color: #657a6d;
 }
