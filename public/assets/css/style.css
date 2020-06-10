@@ -943,7 +943,7 @@ section {
 /*--------------------------------------------------------------
 # Project Details
 --------------------------------------------------------------*/
-.project-details h3 {
+.user-result h3 {
   font-size: 24px;
   margin: 30px 0 15px 0;
   font-weight: 700;
@@ -951,7 +951,7 @@ section {
   padding-bottom: 10px;
 }
 
-.project-details h3:before {
+.user-result h3:before {
   content: '';
   position: absolute;
   display: block;
@@ -962,7 +962,7 @@ section {
   left: 0;
 }
 
-.project-details h3:after {
+.user-result h3:after {
   content: '';
   position: absolute;
   display: block;
@@ -973,25 +973,25 @@ section {
   left: 0;
 }
 
-.project-details .project-info {
+.user-result .project-info {
   background: #f6f7f6;
   padding: 10px 15px;
   margin-bottom: 15px;
 }
 
-.project-details .project-info h5 {
+.user-result .project-info h5 {
   font-weight: 400;
   font-size: 16px;
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
 
-.project-details .project-info p {
+.user-result .project-info p {
   margin: 0;
   font-weight: 600;
 }
 
-.project-details .project-info a {
+.user-result .project-info a {
   color: #657a6d;
 }
 

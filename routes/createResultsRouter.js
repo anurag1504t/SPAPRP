@@ -14,25 +14,27 @@ createResultsRouter.route('/')
 .post((req, res, next) => {
     Marks.find({batch: req.body.batch})
     .then((students) => {
+        // console.log(students);
         for (var i = (students.length -1); i >= 0; i--) {
             for(var j = students[i].semesters.length - 1; i >= 0; i--) {
-                if(students[i].semesters[j].semester == req.body.semester) {
-                    var subjectMarks = 0;
-                    var totalMarks = 0;
+                if(students[i].semesters[j].semester == req.body.semester) { 
+                    var SG = 0;
                     for(var k = students[i].semesters[j].subjects.length -1; k >= 0; k--) {
-                        subjectMarks += students[i].semesters[j].subjects[k].major*req.body.major + students[i].semesters[j].subjects[k].minor*req.body.minor + students[i].semesters[j].subjects[k].attendence*req.body.attendence +students[i].semesters[j].subjects[k].assignment*req.body.assignment;
-                        totalMarks += 50*req.body.major + 40*req.body.minor + 5*req.body.attendence +5*req.body.assignment;
+                        var subjectMarks = students[i].semesters[j].subjects[k].major*req.body.major + students[i].semesters[j].subjects[k].minor*req.body.minor + students[i].semesters[j].subjects[k].attendence*req.body.attendence +students[i].semesters[j].subjects[k].assignment*req.body.assignment;
+                        var totalMarks = 50*req.body.major + 40*req.body.minor + 5*req.body.attendence + 5*req.body.assignment;
+                        SG = SG + (subjectMarks/totalMarks)*10;
                     }
-                    var SG = subjectMarks/totalMarks*10;
+                    var SG = SG/students[i].semesters[j].subjects.length; 
                     Users.findOne({userId: students[i].userId})
                     .then((user) => {
                         if (user != null) {
                             var temp = 0;
                             for( var l = user.SGPA.length - 1; l >= 0; l--)
                             {
-                                temp += user.SGPA[i].SG;
+                                console.log(user.SGPA[l].gradePoint);                                
+                                temp += user.SGPA[l].gradePoint;
                             }
-                            user.SGPA.push({semester: req.body.semester, gradepoint: SG});
+                            user.SGPA.push({semester : req.body.semester, gradePoint : SG});
                             user.CGPA = (temp + SG)/(user.SGPA.length + 1);
                             user.save()
                             .then((user) => {
@@ -49,6 +51,11 @@ createResultsRouter.route('/')
                         }
                     }, (err) => next(err))
                     .catch((err) => next(err));
+                }
+                else {
+                    err = new Error(`User ${req.params.userId} not found`);
+                    err.status = 404;
+                    return next(err);
                 }
             }
         }

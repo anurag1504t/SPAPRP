@@ -1,23 +1,82 @@
+# Students’ Performance and Project Reporting Portal
+Students’ Performance and Project Reporting Portal is a website developed with Node JS, MangoDB, Express, HTML, CSS, Bootstrap etc.
+
+Credit for Bootstrap Template
+<!-- =======================================================
+  * Template Name: Mentor - v2.0.0
+  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+## Installation
+
+To install all the dependencies and to run the website, follow following commands in the terminal.
+
 change directory:   
     > cd SPAPRP   
 install dependencies:    
     > npm install      
 run the app:     
-    > SET DEBUG=spaprp:* & npm start              
+    > npm start  
 
+To connect to the MongoDb database server, Open a new terminal, navigate to the SPAPRP folder and run the following command.
+mongod --dbpath=data --bind_ip 127.0.0.1
 
+Now visit "localhost:3000" on any browser.
 
-<<<<<<< HEAD
-To create a Project Object
+List of Node Dependencies(Libraries)
+	"body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "mongoose": "^5.9.16",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.4"
+  
+ ## Features
+ 
+There are two important features of this project
+
+ ### Project Section
+
+This section deals with the sharing of project ideas, through the website. Any student can post the details of his/her original work.
+Act as an interface for students to show case their skills.
+
+All the backend API's are completed and it can be accessed at path "routes\projectRouter.js". It has been fully integrated with the frontend part.
+Due to the CORS policies, some browsers require an extention, so that API calls can be completed, through our frontend.
+
+If using Chrome download the following Extention.
+https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
+
+Note: When the extention is enabled, it can cause errors to loading other websites such as youtube.com, etc. Hence, the extention should be disabled/removed after the successful testing of the API endpoints "http://localhost:3000/projects/". There are four endpoints each supporting GET, POST, PUT and DELETE methods.
+
+These endpoints can also be tested on POSTMAN.
+To create a new project, use the below template:
 {
-	"projectName" : "Student's Performance and Project Reporting Portal",
-	"description" : "SPAPRP evaluates  students’ academic performance with a fuzzy logic based performance evaluation method to evaluate students’ final academic performance. It also show case projects done by students.",
-	"link" : "https://github.com/anurag1504t/SPAPRP",
-	"teckStack" : ["NodeJS", "MongoDB", "HTML", "CSS", "Javascript"],
-	"contributers" : ["Aman Kumar Mishra", "Anurag Tiwari", "Tathagat Kumar"]
+	"projectName" : "Test Project Name",
+	"description" : "2-3 Lines to Describe the project",
+	"link" : "https://github.com",
+	"teckStack" : ["XYZ", "ABC"],
+	"contributers" : ["XYZ", "ABC"]
 }
 
-To create a User
+ ### Result Section
+
+The second important feature of the website is Result Creation.
+Only backend portion of this section is implemented. 
+To test the API endpoints, POSTMAN should be used.
+
+In this section, first a profile of student is to be created. There are two database documnets named users(contains profile of each student. To check schema of the document visit "/models/users.js") and marks( This document contains marks of each student in each semester in each subject, distributed among components, like major, minor, etc. Visit "/models/marks.js" to check the schema of the document.).
+
+In each document profile of the student is created. When marks are enterd in the database, the admin or a faculty can send the weightage of each component for the result creation based on the fuzzy-logic. Based on the batch and semester, the result of each student for the semester is created and pushed into the SGPA field of the profile of student in document "/models/users.js". CGPA is also updated.
+
+The following profile is already created in the database. Check it by sending requests on endpoints "http://localhost:3000/users" and "http://localhost:3000/marks" by GET method.
+
+
+There are two users in users document.
 {		
 	"userId" : "bcs_201811",		
 	"password" : "anurag@123",		
@@ -32,11 +91,7 @@ To create a User
 		{		
 			"semester" : 2,		
 			"gradePoint" : 8.43		
-		},		
-		{		
-			"semester" : 1,		
-			"gradePoint" : 8.45		
-		}		
+		}	
 	]		
 }		
 {		
@@ -53,15 +108,11 @@ To create a User
 		{		
 			"semester" : 2,		
 			"gradePoint" : 8.09		
-		},		
-		{		
-			"semester" : 1,		
-			"gradePoint" : 7.8
-		}		
+		}	
 	]		
 }
 
-Creation of Marks Object
+Following are the corresponding data objects in the "marks" document. 
 {
 	"userId" : "bcs_201811",
 	"batch" : "bcs2018",
@@ -70,8 +121,8 @@ Creation of Marks Object
 			"semester" : 2,
 			"subjects" : [
 				{
-					"subjectCode" : "DCS",
-					"subjectName" : "Digital Circuit Systems",
+					"subjectCode" : "DS",
+					"subjectName" : "Data Structues",
 					"major" : 40,
 					"minor" : 30,
 					"attendence" : 5,
@@ -86,8 +137,8 @@ Creation of Marks Object
 					"assignment" : 5
 				},
 				{
-					"subjectCode" : "DCS",
-					"subjectName" : "Digital Circuit Systems",
+					"subjectCode" : "EM2",
+					"subjectName" : "Engineering Mathematics 2",
 					"major" : 42,
 					"minor" : 32,
 					"attendence" : 5,
@@ -179,3 +230,15 @@ Creation of Marks Object
 		}	
 	]
 }
+
+Now, send the request to "http://localhost:3000/createResults" with method = POST. Use bellow object as the weightage of each component to create result using fuzzy logic. Body should contain the following object in form JSON.
+{
+	"batch" : "bcs2018",
+	"semester" : 3,
+	"major" : 0.5,
+	"minor" : 0.4,
+	"assignment" : 0.05,
+	"attendence" : 0.05
+} 
+After the successful execution of the request, the results should be reflected into the profile of each student.
+To check that, submit a GET request on "http://localhost:3000/users/:userId" API.

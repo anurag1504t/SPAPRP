@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Events - SPAPRP</title>
+  <title>Add Project</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -45,24 +45,12 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="trainers.html">Trainers</a></li>
-          <li class="active"><a href="events.html">Events</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
+          <li class="active"><a href="events.html">Add New Project</a></li>
+          <li class="drop-down"><a href="">Documentations</a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="https://docs.google.com/document/d/14pXUi5e2u7s_TaOBrh7FW3su8B_NSrqlWBatHS48HXY/edit?usp=sharing">Software Design Document</a></li>
+              <li><a href="https://docs.google.com/document/d/12vU079zNPGRLzHeOmeqqvGrzoLSv6MmzmEA39mDz8wM/edit?usp=sharing">SRS Document</a></li>
+                
             </ul>
           </li>
           <li><a href="contact.html">Contact</a></li>
@@ -70,7 +58,7 @@
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="peojects.html" class="get-started-btn">Get Started</a>
+      <a href="projects.html" class="get-started-btn">Get Started</a>
 
     </div>
   </header><!-- End Header -->
@@ -80,44 +68,59 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2>Events</h2>
-        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+        <h2>Contribute More! Help Most!</h2>
+        <p> We at SPAPRP share your ideas with some of your juniors to ignite their minds with new ideas and try to guide them through your valuable works in various tech stacks.</p>
       </div>
     </div><!-- End Breadcrumbs -->
 
     <!-- ======= Events Section ======= -->
-    <section id="events" class="events">
+    <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/events-1.jpg" alt="...">
+            
+              <form action="projects" method="post" role="form" class="php-email-form">
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="Project" class="form-control" id="name" placeholder="Project Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="form-control" name="Contributor" id="email" placeholder="Contributor's Name" data-rule="minlen:1" data-msg="Please enter a valid name"/>
+                  <div class="validate"></div>
+                </div>
               </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Introduction to webdesign</a></h5>
-                <p class="font-italic text-center">Sunday, September 26th at 7:00 pm</p>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <div class="form-row">
+              <div class="col-md-6 form-group">
+                <input type="text" list="technology" class="form-control" name="subject" id="subject" placeholder="Tech stack" data-rule="minlen:1" data-msg="Please enter a valid tech-stack"/>
+                <div class="validate"></div>
+                <datalist id="technology">
+                  <option value="html"></option>
+                  <option value="css"></option>
+                  <option value="javascript"></option>
+                  <option value="sql"></option>
+                  <option value="java"></option>
+                  <option value="python"></option>
+                  <option value=""></option>
+                  <option value="nodejs"></option>
+                  <option value="react"></option>
+                </datalist>
               </div>
+                <div class="col-md-6 form-group">
+                <input type="url" class="form-control" name="hyperlink" id="hyperlink" placeholder="Add Your Project Url Here" data-rule="minlen:8" size="50" data-msg="Please enter a valid project Link"/>
+                <div class="validate"></div>
+              </div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something about you Project" placeholder="Enter a breif description of your project"></textarea>
+                <div class="validate"></div>
             </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/events-2.jpg" alt="...">
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your Project has been Added. Thank you!</div>
               </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Marketing Strategies</a></h5>
-                <p class="font-italic text-center">Sunday, November 15th at 7:00 pm</p>
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-              </div>
-            </div>
-
+              <div class="text-center"><button type="submit">Add Project</button></div>
+            </form>
           </div>
-        </div>
-
-      </div>
     </section><!-- End Events Section -->
 
   </main><!-- End #main -->
