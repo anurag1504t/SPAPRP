@@ -1,5 +1,11 @@
 # Students’ Performance and Project Reporting Portal
-Students’ Performance and Project Reporting Portal is a website developed with Node JS, MangoDB, Express, HTML, CSS, Bootstrap etc.
+Students’ Performance and Project Reporting Portal is a website developed using Node JS, MangoDB, Express, HTML, CSS, Bootstrap etc.
+This Project is Developed BY:-
+AMAN KUMAR MISHRA 2018BCS-004
+ANURAG TIWARI 2018BCS-011
+TATHAGAT KUMAR 2018BCS-057
+
+ABV-IIITM GWALIOR
 
 Credit for Bootstrap Template
 <!-- =======================================================
